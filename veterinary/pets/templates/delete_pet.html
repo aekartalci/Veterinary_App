@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_superuser %}
+<h1> Delete Post </h1>
+<div class="form-group">
+    <h3>Delete : {{ pet.name }}</h3>
+<form method="POST">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+
+    <button class="btn btn-secondary" >   Delete Post  </button>
+
+    {% endif %}
+    {% endif %}
+
+
+</form>
+
+</div>
+    {% endblock %}
+

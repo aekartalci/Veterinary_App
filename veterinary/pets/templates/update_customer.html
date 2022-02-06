@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selam</title>
+</head>
+<body>
+<h1> Add Blog Post </h1>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-secondary" href="{% url 'index' %}">   Edit  </button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<div class="container" style="margin-left:30px;">
+<h1 style="margin-left:-10px;margin-top:20px;"> PETS </h1>
+  <div style="margin-top:10px;">
+<form class="form-inline my-2 my-lg-0" method='GET'>
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  name='q' value='{{ request.GET.q }}'>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></form>
+
+</div>
+{% for pet in object_list %}
+<li style="margin-top:20px;">{{ pet.name }} | {{ pet.adopter }} | {{ pet.kind }}</li>
+  <div style="margin-top:20px;"><a href="{% url 'pet-detail' pet.pk %}">Git</a>
+    {% if user.is_authenticated %}
+<a href="{% url 'update-pet' pet.pk %}">Edit</a>
+    {% endif %}
+    {% if user.is_superuser %}
+<a href="{% url 'delete-pet' pet.pk %}">Delete</a>
+    {% endif %}
+
+</div>
+{% endfor %}
+
+  </div>
+
+{% endblock %}
