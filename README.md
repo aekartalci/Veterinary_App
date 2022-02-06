@@ -3,6 +3,7 @@
 ## Getting Started
 
 $ virtualenv project-env
+
 $ source project-env/bin/activate
 
 $ git clone https://github.com/aekartalci/Veterinary_App.git
