@@ -41,10 +41,10 @@ class TestViews(TestCase):
         response = self.client.get('http://127.0.0.1:8000/register/')
         self.assertEqual(response.status_code, 200)
 
-    def test_pet_creation(self):
+"""    def test_pet_creation(self):
         self.adopter = Customer.objects.create(name_surname='Ahmet Kartalci',
-                                               phone='+905916576266',
-                                               mail='aekartalci@gmail.com')
+                                               phone='+905462341212',
+                                               mail='aekartalcix@gmail.com')
         data = {
             'adopter':self.adopter,
             'name':'lorem',
@@ -57,7 +57,7 @@ class TestViews(TestCase):
         url = reverse('pets:create-pet')
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 200),
-        self.assertTemplateUsed(response=response, template_name='create_pet.html')
+        self.assertTemplateUsed(response=response, template_name='create_pet.html')"""
 
 
 
