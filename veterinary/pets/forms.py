@@ -10,8 +10,8 @@ class PetForm(forms.ModelForm):
             'adopter': forms.Select(attrs={'class': 'form-control'}),
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'age': forms.TextInput(attrs={'class': 'form-control'}),
-            'kind': forms.TextInput(attrs={'class': 'form-control'}),
-            'gender': forms.TextInput(attrs={'class': 'form-control'}),
+            'kind': forms.Select(attrs={'class': 'form-control'}),
+            'gender': forms.Select(attrs={'class': 'form-control'}),
         }
 
 class CustomerForm(forms.ModelForm):

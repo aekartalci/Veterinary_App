@@ -13,6 +13,6 @@ urlpatterns = [
         path('pet/<int:pk>/delete', PetDelete.as_view(), name="delete-pet"),
         path('customer/<int:pk>', Customers.as_view(), name="customer-detail"),
         path('customer/edit/<int:pk>', CustomerUpdate.as_view(), name="update-customer"),
-        path('register/', UserRegisterView.as_view(), name="register"),
+        path('register', UserRegisterView.as_view(), name="register"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
