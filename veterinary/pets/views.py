@@ -1,5 +1,5 @@
 from .models import Pet, Customer
-from .forms import PetForm
+from .forms import PetForm, CustomerForm
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
@@ -58,6 +58,14 @@ class PetUpdate(UpdateView):
 class Customers(ListView):
     model = Customer
     template_name = 'customers.html'
+
+
+class CustomerCreate(CreateView):
+    model = Customer
+    form_class = CustomerForm
+    template_name = 'create_customer.html'
+    success_url = reverse_lazy('index')
+
 
 
 class CustomerUpdate(UpdateView):

@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import HomeView, PetDetails, PetCreate, PetUpdate, PetDelete, Customers, CustomerUpdate, UserRegisterView
+from .views import HomeView, PetDetails, PetCreate, PetUpdate, PetDelete, Customers, CustomerUpdate, UserRegisterView, CustomerCreate
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -14,6 +14,7 @@ urlpatterns = [
         path('pet/<int:pk>/delete', PetDelete.as_view(), name="delete-pet"),
         path('customer/<int:pk>', Customers.as_view(), name="customer-detail"),
         path('customer/edit/<int:pk>', CustomerUpdate.as_view(), name="update-customer"),
+        path('create_customer', CustomerCreate.as_view(), name="create-customer"),
         path('register/', UserRegisterView.as_view(), name="register"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
