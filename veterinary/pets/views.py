@@ -13,10 +13,10 @@ class UserRegisterView(CreateView):
     success_url = reverse_lazy('login')
 
 
-
 class HomeView(ListView):
     template_name = 'index.html'
     model = Pet
+    paginate_by = 3
 
     def get_queryset(self):
         query = self.request.GET.get('q')

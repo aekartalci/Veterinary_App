@@ -5,13 +5,14 @@ from .models import Customer, Pet
 class PetForm(forms.ModelForm):
     class Meta:
         model = Pet
-        fields = ('adopter', 'name', 'age', 'kind', 'gender')
+        fields = ('adopter', 'name', 'age', 'kind', 'gender', 'description')
         widgets = {
             'adopter': forms.Select(attrs={'class': 'form-control'}),
             'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'age': forms.TextInput(attrs={'class': 'form-control'}),
+            'age': forms.NumberInput(attrs={'class': 'form-control'}),
             'kind': forms.Select(attrs={'class': 'form-control'}),
             'gender': forms.Select(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
 class CustomerForm(forms.ModelForm):
